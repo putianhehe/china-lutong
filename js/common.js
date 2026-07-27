@@ -10,19 +10,44 @@
   // Language Configuration
   // ==========================================================
   const LANGS = ['en', 'cn', 'ru', 'es'];
-  const CURRENT_LANG = (function() {
-    const path = window.location.pathname;
-    for (const l of LANGS) {
-      if (path.startsWith('/' + l + '/') || path === '/' + l) return l;
+
+  // Detect base path (supports both root deploy and subdirectory like /china-lutong/)
+  const BASE_PATH = (function() {
+    var p = window.location.pathname.replace(/\/$/, '');
+    var parts = p.split('/');
+    // 1) Extract subpath before lang directory (e.g., /china-lutong from /china-lutong/en/...)
+    for (var i = 0; i < LANGS.length; i++) {
+      var idx = p.indexOf('/' + LANGS[i] + '/');
+      if (idx !== -1) return p.substring(0, idx);
+      if (p.endsWith('/' + LANGS[i]) && parts[parts.length - 1] === LANGS[i]) {
+        return p.substring(0, p.length - LANGS[i].length - 1);
+      }
+    }
+    // 2) Root index page under subpath (e.g., /china-lutong/ or /china-lutong)
+    if (parts.length >= 2) {
+      var candidate = parts[1];
+      if (candidate && LANGS.indexOf(candidate) === -1 && candidate.indexOf('.') === -1) {
+        return '/' + candidate;
+      }
+    }
+    return '';
+  })();
+
+  var CURRENT_LANG = (function() {
+    var path = window.location.pathname;
+    var rel = BASE_PATH ? path.substring(BASE_PATH.length) : path;
+    for (var i = 0; i < LANGS.length; i++) {
+      if (rel.startsWith('/' + LANGS[i] + '/') || rel === '/' + LANGS[i]) return LANGS[i];
     }
     return 'en';
   })();
 
-  const CURRENT_PAGE = (function() {
-    const path = window.location.pathname;
-    const parts = path.replace(/\/$/, '').split('/');
-    let page = parts[parts.length - 1] || 'index.html';
-    if (!page.endsWith('.html')) page = 'index.html';
+  var CURRENT_PAGE = (function() {
+    var path = window.location.pathname;
+    var rel = BASE_PATH ? path.substring(BASE_PATH.length) : path;
+    var parts = rel.replace(/\/$/, '').split('/');
+    var page = parts[parts.length - 1] || 'index.html';
+    if (page.indexOf('.html') === -1) page = 'index.html';
     return page;
   })();
 
@@ -132,7 +157,7 @@
     toggle.querySelectorAll('a').forEach(function(link) {
       const lang = link.getAttribute('data-lang');
       if (lang && lang !== CURRENT_LANG) {
-        const basePath = '/' + lang + '/' + CURRENT_PAGE;
+        const basePath = BASE_PATH + '/' + lang + '/' + CURRENT_PAGE;
         link.setAttribute('href', basePath);
       } else if (lang === CURRENT_LANG) {
         link.setAttribute('href', '#');
