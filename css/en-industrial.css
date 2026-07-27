@@ -1832,12 +1832,38 @@ table tbody tr:hover {
   .whatsapp-tooltip { display: none; }
 }
 
+/* Factory mobile — stack images full-width for clear viewing */
+@media (max-width: 768px) {
+  .factory-image-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    aspect-ratio: auto;
+    gap: var(--s-8);
+  }
+  .fi-main {
+    grid-column: auto;
+    grid-row: auto;
+    aspect-ratio: 16/9;
+  }
+  .fi-sub {
+    grid-row: auto;
+    grid-column: auto;
+    aspect-ratio: 16/9;
+  }
+  .fi-sub:nth-child(2),
+  .fi-sub:nth-child(3) {
+    grid-row: auto;
+    grid-column: auto;
+  }
+}
+
 @media (max-width: 480px) {
   .stats-grid { grid-template-columns: 1fr 1fr; }
   .trust-strip-grid { grid-template-columns: 1fr 1fr; }
   .why-us-grid { grid-template-columns: 1fr; }
   .brand-item { font-size: 0.875rem; }
   .brand-grid { grid-template-columns: repeat(2, 1fr); }
+  .factory-image-grid { gap: var(--s-6); }
 }
 
 /* ============================================================
