@@ -1,61 +1,61 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <!-- English (root) -->
-  <url><loc>https://www.china-lutong.net/</loc><lastmod>2026-07-28</lastmod><changefreq>weekly</changefreq><priority>1.0</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.china-lutong.net/"/>
-    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.china-lutong.net/cn/"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://www.china-lutong.net/ru/"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://www.china-lutong.net/es/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.china-lutong.net/"/>
+  <url><loc>https://putianhehe.github.io/china-lutong/</loc><lastmod>2026-07-28</lastmod><changefreq>weekly</changefreq><priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://putianhehe.github.io/china-lutong/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://putianhehe.github.io/china-lutong/cn/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://putianhehe.github.io/china-lutong/ru/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://putianhehe.github.io/china-lutong/es/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://putianhehe.github.io/china-lutong/"/>
   </url>
-  <url><loc>https://www.china-lutong.net/about.html</loc><lastmod>2026-07-28</lastmod><changefreq>monthly</changefreq><priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.china-lutong.net/about.html"/>
-    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.china-lutong.net/cn/about.html"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://www.china-lutong.net/ru/about.html"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://www.china-lutong.net/es/about.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.china-lutong.net/about.html"/>
+  <url><loc>https://putianhehe.github.io/china-lutong/about.html</loc><lastmod>2026-07-28</lastmod><changefreq>monthly</changefreq><priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://putianhehe.github.io/china-lutong/about.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://putianhehe.github.io/china-lutong/cn/about.html"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://putianhehe.github.io/china-lutong/ru/about.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://putianhehe.github.io/china-lutong/es/about.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://putianhehe.github.io/china-lutong/about.html"/>
   </url>
-  <url><loc>https://www.china-lutong.net/products.html</loc><lastmod>2026-07-28</lastmod><changefreq>weekly</changefreq><priority>0.9</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.china-lutong.net/products.html"/>
-    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.china-lutong.net/cn/products.html"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://www.china-lutong.net/ru/products.html"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://www.china-lutong.net/es/products.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.china-lutong.net/products.html"/>
+  <url><loc>https://putianhehe.github.io/china-lutong/products.html</loc><lastmod>2026-07-28</lastmod><changefreq>weekly</changefreq><priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://putianhehe.github.io/china-lutong/products.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://putianhehe.github.io/china-lutong/cn/products.html"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://putianhehe.github.io/china-lutong/ru/products.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://putianhehe.github.io/china-lutong/es/products.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://putianhehe.github.io/china-lutong/products.html"/>
   </url>
-  <url><loc>https://www.china-lutong.net/product-detail.html</loc><lastmod>2026-07-28</lastmod><changefreq>weekly</changefreq><priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.china-lutong.net/product-detail.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.china-lutong.net/product-detail.html"/>
+  <url><loc>https://putianhehe.github.io/china-lutong/product-detail.html</loc><lastmod>2026-07-28</lastmod><changefreq>weekly</changefreq><priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://putianhehe.github.io/china-lutong/product-detail.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://putianhehe.github.io/china-lutong/product-detail.html"/>
   </url>
-  <url><loc>https://www.china-lutong.net/news.html</loc><lastmod>2026-07-28</lastmod><changefreq>weekly</changefreq><priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.china-lutong.net/news.html"/>
-    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.china-lutong.net/cn/news.html"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://www.china-lutong.net/ru/news.html"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://www.china-lutong.net/es/news.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.china-lutong.net/news.html"/>
+  <url><loc>https://putianhehe.github.io/china-lutong/news.html</loc><lastmod>2026-07-28</lastmod><changefreq>weekly</changefreq><priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://putianhehe.github.io/china-lutong/news.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://putianhehe.github.io/china-lutong/cn/news.html"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://putianhehe.github.io/china-lutong/ru/news.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://putianhehe.github.io/china-lutong/es/news.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://putianhehe.github.io/china-lutong/news.html"/>
   </url>
-  <url><loc>https://www.china-lutong.net/contact.html</loc><lastmod>2026-07-28</lastmod><changefreq>monthly</changefreq><priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.china-lutong.net/contact.html"/>
-    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.china-lutong.net/cn/contact.html"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://www.china-lutong.net/ru/contact.html"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://www.china-lutong.net/es/contact.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.china-lutong.net/contact.html"/>
+  <url><loc>https://putianhehe.github.io/china-lutong/contact.html</loc><lastmod>2026-07-28</lastmod><changefreq>monthly</changefreq><priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://putianhehe.github.io/china-lutong/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://putianhehe.github.io/china-lutong/cn/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://putianhehe.github.io/china-lutong/ru/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://putianhehe.github.io/china-lutong/es/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://putianhehe.github.io/china-lutong/contact.html"/>
   </url>
   <!-- 中文 -->
-  <url><loc>https://www.china-lutong.net/cn/</loc><lastmod>2026-07-28</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://www.china-lutong.net/cn/about.html</loc><lastmod>2026-07-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.china-lutong.net/cn/products.html</loc><lastmod>2026-07-28</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.china-lutong.net/cn/news.html</loc><lastmod>2026-07-28</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.china-lutong.net/cn/contact.html</loc><lastmod>2026-07-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://putianhehe.github.io/china-lutong/cn/</loc><lastmod>2026-07-28</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://putianhehe.github.io/china-lutong/cn/about.html</loc><lastmod>2026-07-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://putianhehe.github.io/china-lutong/cn/products.html</loc><lastmod>2026-07-28</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://putianhehe.github.io/china-lutong/cn/news.html</loc><lastmod>2026-07-28</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://putianhehe.github.io/china-lutong/cn/contact.html</loc><lastmod>2026-07-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <!-- Русский -->
-  <url><loc>https://www.china-lutong.net/ru/</loc><lastmod>2026-07-28</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.china-lutong.net/ru/about.html</loc><lastmod>2026-07-28</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
-  <url><loc>https://www.china-lutong.net/ru/products.html</loc><lastmod>2026-07-28</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
-  <url><loc>https://www.china-lutong.net/ru/news.html</loc><lastmod>2026-07-28</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
-  <url><loc>https://www.china-lutong.net/ru/contact.html</loc><lastmod>2026-07-28</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://putianhehe.github.io/china-lutong/ru/</loc><lastmod>2026-07-28</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://putianhehe.github.io/china-lutong/ru/about.html</loc><lastmod>2026-07-28</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://putianhehe.github.io/china-lutong/ru/products.html</loc><lastmod>2026-07-28</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://putianhehe.github.io/china-lutong/ru/news.html</loc><lastmod>2026-07-28</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://putianhehe.github.io/china-lutong/ru/contact.html</loc><lastmod>2026-07-28</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
   <!-- Español -->
-  <url><loc>https://www.china-lutong.net/es/</loc><lastmod>2026-07-28</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.china-lutong.net/es/about.html</loc><lastmod>2026-07-28</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
-  <url><loc>https://www.china-lutong.net/es/products.html</loc><lastmod>2026-07-28</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
-  <url><loc>https://www.china-lutong.net/es/news.html</loc><lastmod>2026-07-28</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
-  <url><loc>https://www.china-lutong.net/es/contact.html</loc><lastmod>2026-07-28</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://putianhehe.github.io/china-lutong/es/</loc><lastmod>2026-07-28</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://putianhehe.github.io/china-lutong/es/about.html</loc><lastmod>2026-07-28</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://putianhehe.github.io/china-lutong/es/products.html</loc><lastmod>2026-07-28</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://putianhehe.github.io/china-lutong/es/news.html</loc><lastmod>2026-07-28</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://putianhehe.github.io/china-lutong/es/contact.html</loc><lastmod>2026-07-28</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
 </urlset>

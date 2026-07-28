@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 Disallow: /en/
 
-Sitemap: https://www.china-lutong.net/sitemap.xml
+Sitemap: https://putianhehe.github.io/china-lutong/sitemap.xml
