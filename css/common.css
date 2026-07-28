@@ -232,13 +232,34 @@ ul, ol {
 
 .nav-links a {
   color: rgba(255,255,255,0.75);
-  font-size: var(--text-sm);
+  font-size: 0.9375rem;
   font-weight: 500;
   position: relative;
   padding: var(--space-xs) 0;
   transition: color var(--transition-fast);
   letter-spacing: 0.01em;
 }
+
+/* Chinese (zh-CN) — CJK needs larger font for readability */
+html[lang="zh-CN"] .nav-links a {
+  font-size: 1rem;
+}
+
+html[lang="zh-CN"] .lang-btn {
+  font-size: 0.9375rem;
+}
+
+html[lang="zh-CN"] .btn-cta,
+html[lang="zh-CN"] .btn-cta-outline {
+  font-size: 0.9375rem;
+}
+
+/* Russian (ru) — Cyrillic works well at base size */
+html[lang="ru"] .nav-links a {
+  font-size: 0.9375rem;
+}
+
+/* Spanish (es) — base size is sufficient */
 
 .nav-links a:hover,
 .nav-links a.active {
