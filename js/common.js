@@ -9,45 +9,33 @@
   // ==========================================================
   // Language Configuration
   // ==========================================================
-  const LANGS = ['en', 'cn', 'ru', 'es'];
+  var LANGS = ['en', 'cn', 'ru', 'es'];
 
-  // Detect base path (supports both root deploy and subdirectory like /china-lutong/)
-  const BASE_PATH = (function() {
-    var p = window.location.pathname.replace(/\/$/, '');
-    var parts = p.split('/');
-    // 1) Extract subpath before lang directory (e.g., /china-lutong from /china-lutong/en/...)
-    for (var i = 0; i < LANGS.length; i++) {
-      var idx = p.indexOf('/' + LANGS[i] + '/');
-      if (idx !== -1) return p.substring(0, idx);
-      if (p.endsWith('/' + LANGS[i]) && parts[parts.length - 1] === LANGS[i]) {
-        return p.substring(0, p.length - LANGS[i].length - 1);
-      }
-    }
-    // 2) Root index page under subpath (e.g., /china-lutong/ or /china-lutong)
-    if (parts.length >= 2) {
-      var candidate = parts[1];
-      if (candidate && LANGS.indexOf(candidate) === -1 && candidate.indexOf('.') === -1) {
-        return '/' + candidate;
-      }
-    }
-    return '';
-  })();
+  // English is now at root level. Other languages are subdirectories.
+  // Root path (no /lang/ prefix) = English
+  // /cn/xxx or /ru/xxx or /es/xxx = other languages
 
   var CURRENT_LANG = (function() {
     var path = window.location.pathname;
-    var rel = BASE_PATH ? path.substring(BASE_PATH.length) : path;
     for (var i = 0; i < LANGS.length; i++) {
-      if (rel.startsWith('/' + LANGS[i] + '/') || rel === '/' + LANGS[i]) return LANGS[i];
+      var lang = LANGS[i];
+      if (lang === 'en') continue; // Skip en — it's at root
+      if (path.indexOf('/' + lang + '/') !== -1 || path.endsWith('/' + lang)) {
+        return lang;
+      }
     }
+    // No lang prefix found → root = English
     return 'en';
   })();
 
   var CURRENT_PAGE = (function() {
-    var path = window.location.pathname;
-    var rel = BASE_PATH ? path.substring(BASE_PATH.length) : path;
-    var parts = rel.replace(/\/$/, '').split('/');
+    var path = window.location.pathname.replace(/\/$/, '');
+    var parts = path.split('/');
     var page = parts[parts.length - 1] || 'index.html';
-    if (page.indexOf('.html') === -1) page = 'index.html';
+    if (page.indexOf('.html') === -1) {
+      // Check if last part is a language directory (e.g., /cn or /ru)
+      if (LANGS.indexOf(page) !== -1) page = 'index.html';
+    }
     return page;
   })();
 
@@ -76,7 +64,7 @@
   // Navigation Scroll Effect
   // ==========================================================
   function initNavScroll() {
-    const nav = document.querySelector('.nav');
+    var nav = document.querySelector('.nav');
     if (!nav) return;
     window.addEventListener('scroll', function() {
       if (window.scrollY > 50) {
@@ -91,11 +79,11 @@
   // Active Navigation Link
   // ==========================================================
   function initActiveNavLink() {
-    const links = document.querySelectorAll('.nav-links a, .mobile-nav a');
-    const page = CURRENT_PAGE.replace('.html', '');
+    var links = document.querySelectorAll('.nav-links a, .mobile-nav a');
+    var page = CURRENT_PAGE.replace('.html', '');
     links.forEach(function(link) {
-      const href = link.getAttribute('href') || '';
-      if (href === page || (page === 'index' && href === 'index')) {
+      var href = link.getAttribute('href') || '';
+      if (href === page || (page === 'index' && (href === 'index' || href === 'index.html'))) {
         link.classList.add('active');
       }
     });
@@ -105,12 +93,12 @@
   // Mobile Menu
   // ==========================================================
   function initMobileMenu() {
-    const btn = document.querySelector('.mobile-menu-btn');
-    const panel = document.querySelector('.mobile-nav');
+    var btn = document.querySelector('.mobile-menu-btn');
+    var panel = document.querySelector('.mobile-nav');
     if (!btn || !panel) return;
 
     btn.addEventListener('click', function() {
-      const isOpen = btn.classList.contains('open');
+      var isOpen = btn.classList.contains('open');
       if (isOpen) {
         btn.classList.remove('open');
         panel.classList.remove('open');
@@ -133,11 +121,11 @@
   }
 
   // ==========================================================
-  // Language Dropdown
+  // Language Dropdown — relative paths, root = English
   // ==========================================================
   function initLanguageDropdown() {
-    const toggle = document.querySelector('.lang-toggle');
-    const btn = document.querySelector('.lang-btn');
+    var toggle = document.querySelector('.lang-toggle');
+    var btn = document.querySelector('.lang-btn');
     if (!toggle || !btn) return;
 
     btn.addEventListener('click', function(e) {
@@ -150,15 +138,25 @@
     });
 
     // Mark current language as active in dropdown
-    const currentLink = toggle.querySelector('a[data-lang="' + CURRENT_LANG + '"]');
+    var currentLink = toggle.querySelector('a[data-lang="' + CURRENT_LANG + '"]');
     if (currentLink) currentLink.classList.add('active');
 
-    // Set language switch hrefs
+    // Set language switch hrefs — all relative paths, no absolute
     toggle.querySelectorAll('a').forEach(function(link) {
-      const lang = link.getAttribute('data-lang');
+      var lang = link.getAttribute('data-lang');
       if (lang && lang !== CURRENT_LANG) {
-        const basePath = BASE_PATH + '/' + lang + '/' + CURRENT_PAGE;
-        link.setAttribute('href', basePath);
+        var href;
+        if (CURRENT_LANG === 'en') {
+          // From root (English) → subdirectory language: e.g., cn/about.html
+          href = lang + '/' + CURRENT_PAGE;
+        } else if (lang === 'en') {
+          // From subdirectory language → root (English): e.g., ../about.html
+          href = '../' + CURRENT_PAGE;
+        } else {
+          // Between subdirectory languages (e.g., cn → ru): e.g., ../ru/about.html
+          href = '../' + lang + '/' + CURRENT_PAGE;
+        }
+        link.setAttribute('href', href);
       } else if (lang === CURRENT_LANG) {
         link.setAttribute('href', '#');
         link.addEventListener('click', function(e) { e.preventDefault(); });
@@ -170,7 +168,7 @@
   // Intersection Observer - Scroll Animations
   // ==========================================================
   function initScrollAnimations() {
-    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     if (prefersReducedMotion) {
       document.querySelectorAll('.animate-on-scroll').forEach(function(el) {
         el.classList.add('visible');
@@ -178,7 +176,7 @@
       return;
     }
 
-    const observer = new IntersectionObserver(function(entries) {
+    var observer = new IntersectionObserver(function(entries) {
       entries.forEach(function(entry) {
         if (entry.isIntersecting) {
           entry.target.classList.add('visible');
@@ -195,24 +193,24 @@
   // Count Up Animation (Stats)
   // ==========================================================
   function initCountUp() {
-    const statNumbers = document.querySelectorAll('.stat-number[data-count]');
+    var statNumbers = document.querySelectorAll('.stat-number[data-count]');
     if (!statNumbers.length) return;
 
-    const observer = new IntersectionObserver(function(entries) {
+    var observer = new IntersectionObserver(function(entries) {
       entries.forEach(function(entry) {
         if (entry.isIntersecting) {
-          const el = entry.target;
-          const target = parseInt(el.getAttribute('data-count'), 10);
-          const suffix = el.getAttribute('data-suffix') || '';
-          const duration = 2000;
-          const start = performance.now();
+          var el = entry.target;
+          var target = parseInt(el.getAttribute('data-count'), 10);
+          var suffix = el.getAttribute('data-suffix') || '';
+          var duration = 2000;
+          var start = performance.now();
 
           function update(now) {
-            const elapsed = now - start;
-            const progress = Math.min(elapsed / duration, 1);
+            var elapsed = now - start;
+            var progress = Math.min(elapsed / duration, 1);
             // Ease out cubic
-            const eased = 1 - Math.pow(1 - progress, 3);
-            const current = Math.floor(eased * target);
+            var eased = 1 - Math.pow(1 - progress, 3);
+            var current = Math.floor(eased * target);
             el.textContent = current + suffix;
             if (progress < 1) {
               requestAnimationFrame(update);
@@ -238,26 +236,26 @@
   function initSmoothScroll() {
     document.querySelectorAll('a[href^="#"]').forEach(function(link) {
       link.addEventListener('click', function(e) {
-        const targetId = this.getAttribute('href');
+        var targetId = this.getAttribute('href');
         if (targetId === '#') return;
-        const target = document.querySelector(targetId);
+        var target = document.querySelector(targetId);
         if (target) {
           e.preventDefault();
-          const navHeight = document.querySelector('.nav')?.offsetHeight || 72;
-          const top = target.getBoundingClientRect().top + window.pageYOffset - navHeight;
+          var navHeight = document.querySelector('.nav') ? document.querySelector('.nav').offsetHeight : 72;
+          var top = target.getBoundingClientRect().top + window.pageYOffset - navHeight;
           window.scrollTo({ top: top, behavior: 'smooth' });
         }
       });
     });
 
     // Hero scroll indicator
-    const heroScroll = document.querySelector('.hero-scroll');
+    var heroScroll = document.querySelector('.hero-scroll');
     if (heroScroll) {
       heroScroll.addEventListener('click', function() {
-        const nextSection = document.querySelector('.hero').nextElementSibling;
+        var nextSection = document.querySelector('.hero').nextElementSibling;
         if (nextSection) {
-          const navHeight = document.querySelector('.nav')?.offsetHeight || 72;
-          const top = nextSection.getBoundingClientRect().top + window.pageYOffset - navHeight;
+          var navHeight = document.querySelector('.nav') ? document.querySelector('.nav').offsetHeight : 72;
+          var top = nextSection.getBoundingClientRect().top + window.pageYOffset - navHeight;
           window.scrollTo({ top: top, behavior: 'smooth' });
         }
       });
@@ -269,11 +267,11 @@
   // ==========================================================
   function initLazyImages() {
     if ('IntersectionObserver' in window) {
-      const imgObserver = new IntersectionObserver(function(entries) {
+      var imgObserver = new IntersectionObserver(function(entries) {
         entries.forEach(function(entry) {
           if (entry.isIntersecting) {
-            const img = entry.target;
-            const src = img.getAttribute('data-src');
+            var img = entry.target;
+            var src = img.getAttribute('data-src');
             if (src) {
               img.src = src;
               img.removeAttribute('data-src');
@@ -300,7 +298,7 @@
   // Filter Tabs (News Page)
   // ==========================================================
   function initFilterTabs() {
-    const tabs = document.querySelectorAll('.filter-tab');
+    var tabs = document.querySelectorAll('.filter-tab');
     if (!tabs.length) return;
 
     tabs.forEach(function(tab) {
@@ -308,8 +306,8 @@
         tabs.forEach(function(t) { t.classList.remove('active'); });
         this.classList.add('active');
 
-        const filter = this.getAttribute('data-filter');
-        const cards = document.querySelectorAll('.news-card[data-category], .product-card[data-category]');
+        var filter = this.getAttribute('data-filter');
+        var cards = document.querySelectorAll('.news-card[data-category], .product-card[data-category]');
 
         cards.forEach(function(card) {
           if (filter === 'all' || card.getAttribute('data-category') === filter) {
@@ -326,15 +324,15 @@
   // Contact Form
   // ==========================================================
   function initContactForm() {
-    const form = document.querySelector('.contact-form');
+    var form = document.querySelector('.contact-form');
     if (!form) return;
 
     form.addEventListener('submit', function(e) {
       e.preventDefault();
 
-      const btn = form.querySelector('.btn-submit');
-      const successMsg = form.querySelector('.form-success');
-      const errorMsg = form.querySelector('.form-error');
+      var btn = form.querySelector('.btn-submit');
+      var successMsg = form.querySelector('.form-success');
+      var errorMsg = form.querySelector('.form-error');
 
       if (successMsg) successMsg.classList.remove('show');
       if (errorMsg) errorMsg.classList.remove('show');
@@ -343,7 +341,7 @@
       btn.disabled = true;
 
       // Using Web3Forms - replace with your access key
-      const formData = new FormData(form);
+      var formData = new FormData(form);
       formData.append('access_key', 'YOUR_WEB3FORMS_KEY'); // TODO: Replace with actual key
 
       fetch('https://api.web3forms.com/submit', {
