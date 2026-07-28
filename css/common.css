@@ -242,16 +242,17 @@ ul, ol {
 
 /* Chinese (zh-CN) — CJK needs larger font for readability */
 html[lang="zh-CN"] .nav-links a {
-  font-size: 1rem;
+  font-size: var(--text-lg);          /* 18px */
+  font-weight: 600;
 }
 
 html[lang="zh-CN"] .lang-btn {
-  font-size: 0.9375rem;
+  font-size: 1rem;                    /* 16px */
 }
 
 html[lang="zh-CN"] .btn-cta,
 html[lang="zh-CN"] .btn-cta-outline {
-  font-size: 0.9375rem;
+  font-size: 1rem;                    /* 16px */
 }
 
 /* Russian (ru) — Cyrillic works well at base size */
