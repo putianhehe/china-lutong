@@ -6,8 +6,8 @@
 /* Tailwind CSS — jsDelivr (Fastly CDN, global + China nodes) */
 @import url('https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css');
 
-/* Fonts — China-accessible mirror (loli.net) */
-@import url('https://fonts.loli.net/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700&family=Noto+Sans:wght@300;400;500;600;700&family=Montserrat:wght@500;600;700;800&display=swap');
+/* Fonts — Google official China CDN (fonts.googleapis.cn + fonts.gstatic.cn) */
+@import url('https://fonts.googleapis.cn/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700&family=Noto+Sans:wght@300;400;500;600;700&family=Montserrat:wght@500;600;700;800&display=swap');
 
 /* ============================================================
    CSS Custom Properties (Design Tokens)
