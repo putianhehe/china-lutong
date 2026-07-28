@@ -3,11 +3,11 @@
    B2B Industrial Manufacturing | Swiss Modernism 2.0
    ============================================================ */
 
-/* Tailwind CSS CDN */
+/* Tailwind CSS — jsDelivr (Fastly CDN, global + China nodes) */
 @import url('https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css');
 
-/* Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700&family=Noto+Sans:wght@300;400;500;600;700&family=Montserrat:wght@500;600;700;800&display=swap');
+/* Fonts — China-accessible mirror (loli.net) */
+@import url('https://fonts.loli.net/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700&family=Noto+Sans:wght@300;400;500;600;700&family=Montserrat:wght@500;600;700;800&display=swap');
 
 /* ============================================================
    CSS Custom Properties (Design Tokens)
